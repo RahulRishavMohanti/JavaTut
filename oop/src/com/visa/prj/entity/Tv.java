@@ -17,6 +17,21 @@ private String connectivity;
 	public void setConnectivity(String connectivity) {
 		this.connectivity = connectivity;
 	}
+	@Override
+	public boolean isExpensive() {
+		// TODO Auto-generated method stub
+		if("3G".equals(connectivity) && getPrice()>30000)
+		{
+			return true;
+			
+		}
+		else if("4G".equals(connectivity) && getPrice() >50000) {
+			return true;
+		}
+		return false;
+	}
+		
+	
 	
 
 }

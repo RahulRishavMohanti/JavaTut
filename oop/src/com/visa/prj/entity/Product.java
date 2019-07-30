@@ -1,6 +1,6 @@
 package com.visa.prj.entity;
 
-public class Product {
+public abstract class Product implements Comparable<Product> {
 	private int id;
 	private String name;
 	private double price;
@@ -29,10 +29,19 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public boolean isExpensive() {
-		return false;
-	}
+	public  abstract  boolean isExpensive();
 	public Product() {
 	}
+
+@Override
+	public int compareTo(Product o) {
+		// TODO Auto-generated method stub
+	return Double.compare(this.price, o.price);
+
+	}
+@Override
+public String toString() {
+	return "Product [id=" + id + ", name=" + name + ", price=" + price + "]";
+}
 
 }
