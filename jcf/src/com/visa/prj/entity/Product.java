@@ -1,5 +1,9 @@
 package com.visa.prj.entity;
 
+import com.visa.prj.annotations.Column;
+import com.visa.prj.annotations.Table;
+
+@Table(name="products")
 public class Product implements Comparable<Product>{
 	private int id;
 	private String name;
@@ -7,21 +11,23 @@ public class Product implements Comparable<Product>{
 	private String category;
 	private int count;
 	public Product() {}
-	public Product(int id, String name, double price, String category, int count)
+	public Product(int id, String name, double price, String i, int count)
 	{
 		this.id = id;
 		this.name = name;
 		this.price = price;
-		this.category = category;
+		this.category = i;
 		this.count = count;
 		
 	}
+	@Column(name="prd_id", type="NUMERIC(10)")
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
+	@Column(name="prd_name")
 	public String getName() {
 		return name;
 	}
